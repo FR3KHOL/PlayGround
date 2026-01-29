@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hilyas <hilyas@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/11 15:00:40 by hilyas            #+#    #+#             */
+/*   Updated: 2026/01/29 18:37:20 by hilyas           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
@@ -18,6 +30,5 @@ int		got_newln(char *str);
 int		len_til_nline(char *str);
 char	*extract_myline(char **buff);
 char	*read_more(int fd, char **buff);
-void	clean_buff(char **ptr);
 
 #endif

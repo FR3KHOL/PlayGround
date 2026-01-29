@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hilyas <hilyas@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/11 15:00:13 by hilyas            #+#    #+#             */
+/*   Updated: 2026/01/29 18:46:37 by hilyas           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 int	got_newln(char *s)
@@ -45,6 +57,15 @@ char	*extract_myline(char **buff)
 	return (line);
 }
 
+static void	clean_buff(char **ptr)
+{
+	if (*ptr)
+	{
+		free(*ptr);
+		*ptr = NULL;
+	}
+}
+
 char	*read_more(int fd, char **buff)
 {
 	ssize_t	rd_bytes;
@@ -70,15 +91,6 @@ char	*read_more(int fd, char **buff)
 			break ;
 	}
 	return (*buff);
-}
-
-static void	clean_buff(char **ptr)
-{
-	if (*ptr)
-	{
-		free(*ptr);
-		*ptr = NULL;
-	}
 }
 
 char	*get_next_line(int fd)
